@@ -1,16 +1,28 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Dashboard from '../components/Dashboard'
 
-const Home: NextPage = () => {
+import type { GetServerSideProps, NextPage } from 'next'
+import { cronJob } from '../utils/Scheduler'
+
+interface HomeProps {
+  name: string
+}
+
+const Home: NextPage<HomeProps> = ({ name }) => {
   return (
     <>
       <ion-content>
-        <ion-button>Continue</ion-button>
+        <Dashboard />
       </ion-content>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
+  return {
+    props: {
+      name: "test"
+    }
+  }
 }
 
 export default Home

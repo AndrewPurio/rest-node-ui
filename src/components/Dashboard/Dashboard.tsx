@@ -1,6 +1,5 @@
-import { useEventContext } from "../../contextStore/Events"
-
 import ClockChart from "../events/ClockChart"
+import Main from "./Main"
 
 const events = {
     sleepTime: {
@@ -32,14 +31,11 @@ const events = {
 const Dashboard = () => {
     return (
         <ion-grid>
-            <ion-row class="ion-justify-content-center">
+            <ion-row class="ion-justify-content-center ion-padding">
                 <ClockChart events={events} />
             </ion-row>
-            <ion-row>
-                <ion-col size="6">
-
-                </ion-col>
-            </ion-row>
+            
+            <Main />
         </ion-grid>
     )
 }

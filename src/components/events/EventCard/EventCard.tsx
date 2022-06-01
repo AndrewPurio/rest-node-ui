@@ -1,22 +1,17 @@
 import { useRouter } from "next/router"
-import { alarm, bulb, musicalNotes, bed } from "ionicons/icons"
 import { FC } from "react"
 
 interface EventCardProps {
     title: string
-    icon: number
+    icon: string
     color: string
+    path: string
 }
 
-const EventCard: FC<EventCardProps> = ({ title, icon, color }) => {
+const EventCard: FC<EventCardProps> = ({ title, icon, color, path }) => {
     const router = useRouter()
 
-    const icons = [alarm, bulb, musicalNotes, bed];
-    const colors = ['#2dd36f', '#eb445a', '#71964b', '#e0ac08']
-
     const redirectToSetting = () => {
-        const path = ""
-
         router.push(path)
     }
 
@@ -25,7 +20,7 @@ const EventCard: FC<EventCardProps> = ({ title, icon, color }) => {
             <ion-card-content>
                 <ion-grid>
                     <ion-row class="ion-justify-content-center ion-align-items-center">
-                        <ion-icon class="setting" icon={icons[icon]} size="large" />
+                        <ion-icon class="setting" icon={icon} size="large" />
                     </ion-row>
                     <ion-row class="ion-justify-content-center ion-align-items-center">
                         <ion-text
@@ -38,7 +33,7 @@ const EventCard: FC<EventCardProps> = ({ title, icon, color }) => {
             </ion-card-content>
             <style jsx>{`
                  .card {
-                    background-color: ${colors[icon]};
+                    background-color: ${color};
                     height: 120px;
                  }     
 

@@ -1,0 +1,7 @@
+#searchBar {
+    --border-radius: 25px;
+}
+
+.horizontalStack {
+    overflow-x: auto;
+}
