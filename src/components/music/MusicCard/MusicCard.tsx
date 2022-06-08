@@ -17,7 +17,7 @@ const MusicCard: FC<MusicCardProps> = ({ title, type, composer, imageSrc }) => {
         <ion-card>
             <ion-img class={styles.cardImg} src={src} alt={title} />
             <ion-card-header>
-                <ion-card-title class="ion-text-nowrap">{title}</ion-card-title>
+                <ion-card-title class={`${styles.title} ion-text-nowrap`}>{title}</ion-card-title>
                 <ion-card-subtitle class="ion-text-nowrap">{subtitle}</ion-card-subtitle>
             </ion-card-header>
         </ion-card>

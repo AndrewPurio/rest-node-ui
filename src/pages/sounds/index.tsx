@@ -1,7 +1,9 @@
-import { homeOutline, searchOutline } from "ionicons/icons"
+import { discOutline, homeOutline, libraryOutline } from "ionicons/icons"
 import { NextPage } from "next"
+import Library from "../../components/music/Library"
+
 import Main from "../../components/music/Main"
-import Search from "../../components/music/Search"
+import MusicPlayer from "../../components/music/MusicPlayer"
 
 const SoundsPage: NextPage = () => {
     return (
@@ -10,8 +12,12 @@ const SoundsPage: NextPage = () => {
                 <Main />
             </ion-tab>
 
-            <ion-tab tab="search">
-                <Search />
+            <ion-tab tab="music-player">
+                <MusicPlayer />
+            </ion-tab>
+
+            <ion-tab tab="library">
+                <Library />
             </ion-tab>
 
             <ion-tab-bar slot="bottom">
@@ -20,9 +26,14 @@ const SoundsPage: NextPage = () => {
                     <ion-icon icon={homeOutline} />
                 </ion-tab-button>
 
-                <ion-tab-button tab="search">
-                    <ion-label>Search</ion-label>
-                    <ion-icon icon={searchOutline} />
+                <ion-tab-button tab="music-player">
+                    <ion-label>Music Player</ion-label>
+                    <ion-icon icon={discOutline} />
+                </ion-tab-button>
+
+                <ion-tab-button tab="library">
+                    <ion-label>Library</ion-label>
+                    <ion-icon icon={libraryOutline} />
                 </ion-tab-button>
             </ion-tab-bar>
         </ion-tabs>

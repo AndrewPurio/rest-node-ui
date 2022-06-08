@@ -1,4 +1,5 @@
 import "../styles/globals.css"
+import "../styles/dark.css"
 import "../styles/ionic"
 
 import { defineCustomElements as ionDefineCustomElements } from '@ionic/core/loader';

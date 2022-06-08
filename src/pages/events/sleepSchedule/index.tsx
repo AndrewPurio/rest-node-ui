@@ -1,7 +1,9 @@
+import SleepSchedule from "../../../components/events/SleepSchedule"
+
 const SleepSchedulePage = () => {
   return (
     <ion-content>
-        <ion-text>SleepSchedulePage</ion-text>
+        <SleepSchedule />
     </ion-content>
   )
 }
