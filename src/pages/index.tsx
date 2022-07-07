@@ -1,12 +1,12 @@
 import Dashboard from '../components/Dashboard'
 
-import type { GetServerSideProps, NextPage } from 'next'
+import type { NextPage } from 'next'
 
 interface HomeProps {
   name: string
 }
 
-const Home: NextPage<HomeProps> = ({ name }) => {
+const Home: NextPage<HomeProps> = () => {
   return (
     <>
       <ion-content>
@@ -14,14 +14,6 @@ const Home: NextPage<HomeProps> = ({ name }) => {
       </ion-content>
     </>
   )
-}
-
-export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
-  return {
-    props: {
-      name: "test"
-    }
-  }
 }
 
 export default Home

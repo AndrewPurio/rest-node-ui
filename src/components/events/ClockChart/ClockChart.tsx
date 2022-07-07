@@ -8,20 +8,21 @@ import { eventStyles } from "../../../styles/events"
 interface ClockChartProps {
     events: {
         sleepTime: ClockEvent,
-        wakeTime: ClockEvent,
-        bedTime: ClockEvent,
-        relaxationTime: ClockEvent
+        nightLight: ClockEvent,
+        wakeLight: ClockEvent,
+        nightSound: ClockEvent,
+        wakeSound: ClockEvent,
+        relaxation: ClockEvent
     }
 }
 
 const ClockChart: FC<ClockChartProps> = ({ events }) => {
     const clockEvents = useMemo(() => {
         const eventEntries = Object.entries(events) as [key: keyof typeof eventStyles, value: ClockEvent][]
+        const midnight = new Date()
+        midnight.setHours(0, 0, 0, 0)
 
         const datasets = eventEntries.map(([key, { start, end }]) => {
-            const midnight = new Date()
-            midnight.setHours(0, 0, 0, 0)
-
             const diff = end.getTime() - start.getTime()
             const labels = [convertCamelCaseToNormalCase(key)]
             const data = [start.getTime() - midnight.getTime()]
@@ -43,10 +44,7 @@ const ClockChart: FC<ClockChartProps> = ({ events }) => {
         const config: ChartConfiguration<"doughnut", number[], string> = {
             type: 'doughnut',
             data: {
-                datasets: [...clockEvents, {
-                    data: [1],
-                    backgroundColor: ["#FFFFFF"]
-                }]
+                datasets: [...clockEvents]
             },
             options: {
                 plugins: {
@@ -59,7 +57,7 @@ const ClockChart: FC<ClockChartProps> = ({ events }) => {
                 }
             }
         }
-        
+
         const chart = new Chart("clock-chart", config)
 
         return () => {

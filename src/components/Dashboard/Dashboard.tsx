@@ -6,23 +6,23 @@ const events = {
         start: new Date(),
         end: new Date(Date.now() + 8 * 60 * 60 * 1000)
     },
-    bedTime: {
+    nightLight: {
         start: new Date(Date.now() - 1 * 60 * 60 * 1000),
         end: new Date(Date.now() + 8 * 60 * 60 * 1000)
     },
-    wakeTime: {
-        start: new Date(Date.now() - 5 * 60 * 60 * 1000),
-        end: new Date(Date.now() + 2 * 60 * 60 * 1000)
+    wakeLight: {
+        start: new Date(Date.now() - 1 * 60 * 60 * 1000),
+        end: new Date(Date.now() + 8 * 60 * 60 * 1000)
     },
-    relaxationTime: {
-        start: new Date(Date.now() + 4 * 60 * 60 * 1000),
-        end: new Date(Date.now() + 15 * 60 * 60 * 1000)
+    nightSound: {
+        start: new Date(Date.now() - 1 * 60 * 60 * 1000),
+        end: new Date(Date.now() + 8 * 60 * 60 * 1000)
     },
-    sunrise: {
-        start: new Date(Date.now() + 4 * 60 * 60 * 1000),
-        end: new Date(Date.now() + 15 * 60 * 60 * 1000)
+    wakeSound: {
+        start: new Date(Date.now() - 1 * 60 * 60 * 1000),
+        end: new Date(Date.now() + 8 * 60 * 60 * 1000)
     },
-    sunset: {
+    relaxation: {
         start: new Date(Date.now() + 4 * 60 * 60 * 1000),
         end: new Date(Date.now() + 15 * 60 * 60 * 1000)
     }
@@ -34,7 +34,7 @@ const Dashboard = () => {
             <ion-row class="ion-justify-content-center ion-padding">
                 <ClockChart events={events} />
             </ion-row>
-            
+
             <Main />
         </ion-grid>
     )

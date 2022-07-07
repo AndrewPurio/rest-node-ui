@@ -1,20 +1,20 @@
 export const eventStyles = {
     sleepTime: {
-        color: "#FF6384"
+        color: "#2dd36f"
     },
-    bedTime: {
-        color: "#36A2EB"
+    nightLight: {
+        color: "#eb445a"
     },
-    wakeTime: {
+    wakeLight: {
+        color: "#eb445a"
+    },
+    nightSound: {
+        color: "#71964b"
+    },
+    wakeSound: {
+        color: "#71964b"
+    },
+    relaxation: {
         color: "#FFCE56"
-    },
-    relaxationTime: {
-        color: "#FFCE56"
-    },
-    sunrise: {
-        color: "#DBD1BE"
-    },
-    sunset: {
-        color: "#FC7A00"
     }
 }

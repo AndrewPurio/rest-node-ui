@@ -1,12 +1,15 @@
 import { moonOutline, sunnyOutline } from "ionicons/icons";
+import { Lights } from "../../api/RestNode/lights/types";
 
 export const lights = {
-    night: {
+    [Lights.Night]: {
         name: "Night Light",
-        icon: moonOutline
+        icon: moonOutline,
+        id: Lights.Night
     },
-    wake: {
+    [Lights.Wake]: {
         name: "Wake Light",
-        icon: sunnyOutline
+        icon: sunnyOutline,
+        id: Lights.Wake
     }
 }

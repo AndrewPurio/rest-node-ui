@@ -1,11 +1,15 @@
 import { NextPage } from "next"
+import { LightsContextProvider } from "../../contextStore/Lights"
+
 import Lights from "../../components/lights/Lights"
 
 const LightsPage: NextPage = () => {
   return (
-    <ion-content>
+    <LightsContextProvider>
+      <ion-content>
         <Lights />
-    </ion-content>
+      </ion-content>
+    </LightsContextProvider>
   )
 }
 

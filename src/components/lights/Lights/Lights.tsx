@@ -8,9 +8,7 @@ const Lights = () => {
             <ion-list-header>Manual Control</ion-list-header>
             {
                 Object.entries(lights).map(([key, value]) => (
-                    <ion-accordion-group key={key} expand="inset">
-                        <LightControls {...value} />
-                    </ion-accordion-group>
+                    <LightControls key={key} {...value} />
                 ))
             }
         </ion-list>
