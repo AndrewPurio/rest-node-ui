@@ -13,7 +13,7 @@ export const requestLights = async (type: Lights, query: LightsQuery) => {
     }
 
     try {
-        const fetchedData = await fetch(url, config)
+        const fetchedData = await fetch(url.toString(), config)
         const jsonData = await fetchedData.json()
 
         if (fetchedData.status >= 400) {
